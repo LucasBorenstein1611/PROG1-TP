@@ -1,3 +1,42 @@
-body {
-    background-color: red;
-}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin: 0px 20px;
+  }
+  
+  * {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  header {
+    display: flex;
+    border: 1px solid black;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 10px;
+  }
+  
+  header .header_img img {
+    width: 120px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  header .header_menu ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header .header_menu ul li {
+    margin-right: 20px;
+  }
+  
+  header .header_menu ul img {
+    margin-right: 20px;
+  }
