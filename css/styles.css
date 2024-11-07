@@ -1,42 +1,53 @@
+/* Estilos generales */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    margin: 0px 20px;
-  }
-  
-  * {
-    font-family: "Montserrat", sans-serif;
+    background-color: beige;
+}
+
+* {
+    font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 400; 
     font-style: normal;
-  }
-  
-  header {
+}
+
+/* INICIO HEADER */
+header {
+    background-color: rgba(54, 11, 11, 0.347);
     display: flex;
-    border: 1px solid black;
-    height: 60px;
+    border: 2px solid rgba(54, 11, 11, 0.347);
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
     margin-top: 10px;
-  }
-  
-  header .header_img img {
+}
+
+header .header_img img {
     width: 120px;
     height: 50px;
-    border-radius: 10px;
-  }
-  
-  header .header_menu ul {
+    border-radius: 0;
+    margin: 0;
+}
+
+/* INICIO FOOTER */
+footer {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(54, 11, 11, 0.347);
     display: flex;
-    list-style: none;
-  }
-  
-  header .header_menu ul li {
-    margin-right: 20px;
-  }
-  
-  header .header_menu ul img {
-    margin-right: 20px;
-  }
+    justify-content: center;
+    align-items: center;
+}
+
+footer .index_nombres {
+    text-align: center;
+}
+
+footer .index_nombres h1 {
+    display: inline-block;
+    margin: 10px 20px; /* Agrega un espacio horizontal de 20px entre los nombres */
+    border-radius: 5px; /* Opcional, redondea los bordes */
+}
