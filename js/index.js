@@ -11,13 +11,13 @@ function validarBusqueda() {
 
     if (terminoBusqueda === "") {
         entradaBusqueda.placeholder = "Campo vacío";
-        entradaBusqueda.style.borderColor = "red"; // Cambia el color del borde
+        entradaBusqueda.style.borderColor = "red";
         console.log("Campo de texto vacío");
         return false;
     } else if (terminoBusqueda.length < 3) {
-        entradaBusqueda.value = ""; // Limpia la entrada para que sea obvio el error
+        entradaBusqueda.value = ""; // Limpia la entrada para volver a intentar de cero y que se lea el mensaje
         entradaBusqueda.placeholder = "Menos de 3 caracteres";
-        entradaBusqueda.style.borderColor = "red"; // Cambia el color del borde
+        entradaBusqueda.style.borderColor = "red"; 
         console.log("menos de 3 caracteres");
         return false;
     } else {
