@@ -3,7 +3,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: beige;
 }
 
 * {
@@ -17,18 +16,19 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: beige;
 }
 
 /* INICIO HEADER */
 header {
-    background-color: rgba(54, 11, 11, 0.347);
+    width: 100%;
+    background-color: rgba(54, 11, 11, 0.559);
     display: flex;
     border: 2px solid rgba(54, 11, 11, 0.347);
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 50px;
-    margin-top: 10px;
+    
 }
 
 header .header_img {
@@ -41,15 +41,28 @@ header .header_img img {
     border-radius: 0;
 }
 
+header .header_links ul a {
+    color: black;
+    text-decoration: none;
+    margin: 0 30px;
+} 
+
+header .header_form {
+    margin-right: 30px;
+}
+
 /* INICIO FOOTER */
 footer {
     width: 100%;
-    height: 400px;
-    background-color: rgba(54, 11, 11, 0.347);
+    height: 300px;
+    background-image: url(/imagen_footer.jpeg); /* Asegúrate de que la URL sea correcta */
+    background-repeat: no-repeat;
+    background-size: cover; /* Hace que la imagen ocupe todo el espacio del footer */
+    background-position: center; /* Centra la imagen en el footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto; /* Empuja el footer a la parte inferior */
+    margin-top: auto;
 }
 
 footer .index_nombres {
@@ -60,4 +73,6 @@ footer .index_nombres {
 footer .index_nombres h1 {
     display: inline-block;
     margin: 10px 20px; 
+    background-color: none;
 }
+
