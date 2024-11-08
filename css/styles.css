@@ -13,6 +13,12 @@
     font-style: normal;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 /* INICIO HEADER */
 header {
     background-color: rgba(54, 11, 11, 0.347);
@@ -25,11 +31,14 @@ header {
     margin-top: 10px;
 }
 
+header .header_img {
+    margin-left: 20px;
+}
+
 header .header_img img {
     width: 120px;
     height: 50px;
     border-radius: 0;
-    margin: 0;
 }
 
 /* INICIO FOOTER */
@@ -40,6 +49,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: auto; /* Empuja el footer a la parte inferior */
 }
 
 footer .index_nombres {
