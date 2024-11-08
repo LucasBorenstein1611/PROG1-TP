@@ -54,10 +54,10 @@ footer {
 
 footer .index_nombres {
     text-align: center;
+    border-radius: 20px;
 }
 
 footer .index_nombres h1 {
     display: inline-block;
-    margin: 10px 20px; /* Agrega un espacio horizontal de 20px entre los nombres */
-    border-radius: 5px; /* Opcional, redondea los bordes */
+    margin: 10px 20px; 
 }
