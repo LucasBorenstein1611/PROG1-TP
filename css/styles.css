@@ -51,7 +51,7 @@ header .header_form {
     margin-right: 30px;
 }
 
-/* FIN FOOTER */
+
 
 /* INICIO FOOTER */
 footer {
@@ -79,3 +79,66 @@ footer .index_nombres h1 {
 }
 
 /* FIN FOOTER */
+
+/* INICIO INDEX */
+
+.index_titular {
+    text-align: center;
+    margin-top: 1%;
+    font-size: 400%;
+}
+
+.index_recetas_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 2%;
+}
+
+.index_receta {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1%;
+    border: 1px solid rgba(29, 75, 40, 0.559);
+    margin: 1% 0.5%;
+}
+
+.index_receta img {
+    margin: 5% 0;
+    width: 90%;
+    align-items: center;
+    
+}
+
+.index_receta .index_titulo {
+    font-weight: bold;
+    color: rgba(54, 11, 11, 0.347);
+    margin-bottom: 2%
+}
+
+.index_receta .index_dificultad {
+    color: rgba(29, 75, 40, 0.559);
+    margin-bottom: 2%;
+}
+
+.index_receta .index_detalle {
+    color: rgba(29, 75, 40, 0.559);
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+
+.index_boton_cargar_container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1% 2.5%; /* Opcional: ajusta los márgenes alrededor del botón */
+}
+
+.index_boton_cargar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(54, 11, 11, 0.347);
+    border: 1px solid rgba(29, 75, 40, 0.559);
+}
+
