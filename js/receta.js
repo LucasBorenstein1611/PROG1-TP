@@ -1,12 +1,9 @@
-// Selecciona el contenedor para mostrar los detalles de la receta
 let recetaDetalleContainer = document.querySelector(".receta_detalle_container");
 
-// Obtiene el ID de la receta desde la URL
-let queryString = location.search; // Obtiene la parte de la URL después del "?"
+let queryString = location.search;
 let params = new URLSearchParams(queryString);
-let recetaId = params.get("id"); // Obtiene el valor del parámetro "id"
+let recetaId = params.get("id");
 
-// Verifica si el ID está presente
 if (recetaId) {
     fetch(`https://dummyjson.com/recipes/${recetaId}`)
         .then((response) => response.json())
@@ -19,18 +16,26 @@ if (recetaId) {
                         <p class="receta_detalle_tiempo">Tiempo de cocción: ${data.cookingTime} minutos</p>
                         <h3>Instrucciones:</h3>
                         <p class="receta_detalle_instrucciones">${data.instructions}</p>
-                        <h3>Categorías:</h3>
-                        <ul class="receta_detalle_categorias">
-                            ${data.categories
-                                .map(
-                                    (categoria) => `
-                                <li><a href="categories.html?categoria=${categoria}" class="categoria_enlace">${categoria}</a></li>
-                            `
-                                )
-                                .join("")}
-                        </ul>
-                    </article>
                 `;
+
+                // Verificar si hay categorías y agregarlas
+                if (data.categories && data.categories.length > 0) {
+                    let categoriasHTML = "";
+                    for (let i = 0; i < data.categories.length; i++) {
+                        categoriasHTML += `
+                            <li><a href="categories.html?categoria=${data.categories[i]}" class="categoria_enlace">${data.categories[i]}</a></li>
+                        `;
+                    }
+
+                    recetaHTML += `
+                        <h3>Categorías:</h3>
+                        <ul class="receta_detalle_categorias">${categoriasHTML}</ul>
+                    `;
+                } else {
+                    recetaHTML += `<p>No hay categorías disponibles para esta receta.</p>`;
+                }
+
+                recetaHTML += `</article>`;
                 recetaDetalleContainer.innerHTML = recetaHTML;
             } else {
                 recetaDetalleContainer.innerHTML = `<p>No se encontraron datos para esta receta.</p>`;

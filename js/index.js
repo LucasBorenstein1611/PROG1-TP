@@ -34,55 +34,44 @@ function validarBusqueda() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    let recetasContainer = document.querySelector(".index_recetas_container");
+    let botonCargar = document.querySelector(".index_boton_cargar");
 
-// Selecciona el contenedor de recetas y el botón de "Cargar más"
-let recetasContainer = document.querySelector(".index_recetas_container");
-let botonCargar = document.querySelector(".index_boton_cargar");
+    let recetasMostradas = 0;
+    const recetasPorPagina = 10;
 
-// Variables de control
-let recetasMostradas = 0;
-const recetasPorPagina = 10;
-
-// Función para cargar recetas desde la API
-function cargarRecetas() {
-    fetch(`https://dummyjson.com/recipes?skip=${recetasMostradas}&limit=${recetasPorPagina}`)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            if (data.recipes && data.recipes.length > 0) {
-                let recetasHTML = "";
-
-                // Bucle for para recorrer las recetas
-                for (let i = 0; i < data.recipes.length; i++) {
-                    let receta = data.recipes[i];
-                    recetasHTML += `
-                        <article class="index_receta">
-                            <img src="${receta.image}" class="index_imagenes" />
-                            <h2 class="index_titulo">${receta.name}</h2>
-                            <p class="index_dificultad">Dificultad: ${receta.difficulty}</p>
-                            <a href="receta.html?id=${receta.id}" class="index_detalle">Ver detalle</a>
-                        </article>
-                    `;
+    function cargarRecetas() {
+        fetch(`https://dummyjson.com/recipes?skip=${recetasMostradas}&limit=${recetasPorPagina}`)
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.recipes) {
+                    let recetasHTML = "";
+                    for (let i = 0; i < data.recipes.length; i++) {
+                        let receta = data.recipes[i];
+                        recetasHTML += `
+                            <article class="index_receta">
+                                <img src="${receta.image}" class="index_imagenes" />
+                                <h2 class="index_titulo">${receta.name}</h2>
+                                <p class="index_dificultad">Dificultad: ${receta.difficulty}</p>
+                                <a href="receta.html?id=${receta.id}" class="index_detalle">Ver detalle</a>
+                            </article>
+                        `;
+                    }
+                    recetasContainer.innerHTML += recetasHTML;
+                    recetasMostradas += recetasPorPagina;
+                } else {
+                    recetasContainer.innerHTML = `<p>No se encontraron recetas para mostrar.</p>`;
                 }
+            })
+            .catch((error) => {
+                console.error(`Error al cargar las recetas: ${error}`);
+            });
+    }
 
-                // Agregar las recetas al contenedor
-                recetasContainer.innerHTML += recetasHTML;
+    // Asignar el evento al botón de cargar más
+    botonCargar.addEventListener("click", cargarRecetas);
 
-                // Actualizar el contador de recetas mostradas
-                recetasMostradas += recetasPorPagina;
-            } else {
-                // Si no hay recetas, mostrar un mensaje
-                recetasContainer.innerHTML = `<p>No se encontraron recetas para mostrar.</p>`;
-            }
-        })
-        .catch(function(error) {
-            console.error(`Error al cargar las recetas: ${error}`);
-        });
-}
-
-// Evento para cargar más recetas
-botonCargar.addEventListener("click", cargarRecetas);
-
-// Cargar recetas al cargar la página
-document.addEventListener("DOMContentLoaded", cargarRecetas);
+    // Cargar recetas al cargar la página
+    cargarRecetas();
+});
