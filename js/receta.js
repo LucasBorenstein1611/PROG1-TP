@@ -1,4 +1,4 @@
-let recetaDetalleContainer = document.querySelector(".receta_detalle_container");
+let recetaDetalleContainer = document.querySelector(".receta_container");
 
 let queryString = location.search;
 let params = new URLSearchParams(queryString);
@@ -11,25 +11,25 @@ if (recetaId) {
             if (data) {
                 let recetaHTML = `
                     <article class="receta_detalle">
-                        <img src="${data.image}" alt="${data.name}" class="receta_detalle_imagen">
-                        <h2 class="receta_detalle_titulo">${data.name}</h2>
-                        <p class="receta_detalle_tiempo">Tiempo de cocción: ${data.cookingTime} minutos</p>
-                        <h3>Instrucciones:</h3>
-                        <p class="receta_detalle_instrucciones">${data.instructions}</p>
+                        <img src="${data.image}" alt="${data.name}" class="receta_imagen">
+                        <h2 class="receta_titulo">${data.name}</h2>
+                        <p class="receta_tiempo">Tiempo de cocción: ${data.cookTimeMinutes} minutos</p>
+                        <h3 class="receta_titulo">Instrucciones:</h3>
+                        <p class="receta_instrucciones">${data.instructions}</p>
                 `;
 
                 // Verificar si hay categorías y agregarlas
-                if (data.categories && data.categories.length > 0) {
+                if (data.tags && data.tags.length > 0) {
                     let categoriasHTML = "";
-                    for (let i = 0; i < data.categories.length; i++) {
+                    for (let i = 0; i < data.tags.length; i++) {
                         categoriasHTML += `
-                            <li><a href="categories.html?categoria=${data.categories[i]}" class="categoria_enlace">${data.categories[i]}</a></li>
-                        `;
+                            <li><a href="categories.html?categoria=${data.tags[i]}" class="receta_categorias">${data.tags[i]}</a></li>
+                        `;  
                     }
 
                     recetaHTML += `
-                        <h3>Categorías:</h3>
-                        <ul class="receta_detalle_categorias">${categoriasHTML}</ul>
+                        <h3 class="receta_titulo_categorias">Categorías:</h3>
+                        <ul class="receta_lista">${categoriasHTML}</ul>
                     `;
                 } else {
                     recetaHTML += `<p>No hay categorías disponibles para esta receta.</p>`;
