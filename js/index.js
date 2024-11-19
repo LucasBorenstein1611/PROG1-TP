@@ -1,38 +1,35 @@
 // Seleccionar el formulario y el campo de entrada
-const formularioBusqueda = document.getElementById("formularioBusqueda");
-const entradaBusqueda = document.getElementById("entradaBusqueda");
+let formularioBusqueda = document.querySelector("#formularioBusqueda");
+let entradaBusqueda = document.querySelector("#entradaBusqueda");
 
-// Agregar un evento al formulario para manejar la validación
+// Agregar evento al formulario
 formularioBusqueda.addEventListener("submit", function (event) {
-    // Evitar que el formulario se envíe si la validación falla
-    if (!validarBusqueda()) {
-        event.preventDefault(); // Detiene el envío del formulario
-    }
-});
+    event.preventDefault(); // Detener el envío por defecto
 
-// Función para validar el término de búsqueda
-function validarBusqueda() {
-    const terminoBusqueda = entradaBusqueda.value.trim(); // Eliminar espacios en blanco al inicio y final
+    let errors = false;
 
-    if (terminoBusqueda === "") {
-        // Si está vacío, mostrar un mensaje de error
+    // Validar campo de búsqueda
+    if (entradaBusqueda.value === "") {
         entradaBusqueda.placeholder = "El campo está vacío";
         entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
         console.log("El campo está vacío");
-        return false;
-    } else if (terminoBusqueda.length < 3) {
-        // Si el término es menor a 3 caracteres, mostrar un mensaje de error
+        errors = true;
+    } else if (entradaBusqueda.value.length < 3) {
         entradaBusqueda.value = ""; // Limpia el campo para volver a intentar
         entradaBusqueda.placeholder = "Mínimo 3 caracteres";
         entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
         console.log("El término es demasiado corto");
-        return false;
+        errors = true;
     } else {
-        // Si pasa la validación, restablecer el estilo
         entradaBusqueda.style.borderColor = ""; // Restaurar el color del borde
-        return true;
     }
-}
+
+    // Si no hay errores, enviar el formulario
+    if (!errors) {
+        formularioBusqueda.submit();
+    }
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
     let recetasContainer = document.querySelector(".index_recetas_container");
