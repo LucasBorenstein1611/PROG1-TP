@@ -38,7 +38,21 @@
     </header>
     
     <main>
-      <h1 class="index_titulo">REGISTRO</h1>
+      <h1 class="index_titular">Registrarse</h1>
+
+      <div class="login_container">
+        <form action="index.html" method="get" class="login_formulario">
+          <h1 class="login_titulo">Iniciar Sesión</h1>
+          <input type="email" placeholder="Ingresa tu email" class="login_input login_email">
+          <input type="password" placeholder="Ingresa tu contraseña" class="login_input login_contra">
+          <button type="submit" class="login_boton">Iniciar Sesión</button>
+          <div>
+            <input type="checkbox" placeholder="Términos y condiciones" class="register_tyc">
+            <label for="register_tyc">Terminos y condiciones</label>
+          </div>
+          <a href="login.html" class="login_enlace">Ya tengo cuenta</a>
+        </form>
+      </div>
 
     </main>
 
@@ -51,6 +65,6 @@
       
     </footer>
     <script src="js/index.js"></script>
-    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
