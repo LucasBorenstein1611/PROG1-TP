@@ -3,7 +3,7 @@ let formularioBusqueda = document.querySelector("#formularioBusqueda");
 let entradaBusqueda = document.querySelector("#entradaBusqueda");
 
 // Agregar evento al formulario
-formularioBusqueda.addEventListener("submit", function (event) {
+formularioBusqueda.addEventListener("submit", function (event) { 
     event.preventDefault(); // Detener el envío por defecto
 
     let errors = false;
@@ -12,13 +12,13 @@ formularioBusqueda.addEventListener("submit", function (event) {
     if (entradaBusqueda.value === "") {
         entradaBusqueda.placeholder = "El campo está vacío";
         entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
-        console.log("El campo está vacío");
+        
         errors = true;
     } else if (entradaBusqueda.value.length < 3) {
         entradaBusqueda.value = ""; // Limpia el campo para volver a intentar
         entradaBusqueda.placeholder = "Mínimo 3 caracteres";
         entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
-        console.log("El término es demasiado corto");
+        
         errors = true;
     } else {
         entradaBusqueda.style.borderColor = ""; // Restaurar el color del borde
