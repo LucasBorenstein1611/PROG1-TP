@@ -6,7 +6,7 @@ let Tyc = document.querySelector(".register_tyc")
 
 // Agregar evento al formulario
 formularioLogIn.addEventListener("submit", function (event) {
-    event.preventDefault(); // Detener el envío por defecto
+    event.preventDefault(); // Detener el envío del formulario si errors no es "true"
 
     let errors = false;
 

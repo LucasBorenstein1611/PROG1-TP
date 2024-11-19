@@ -211,6 +211,40 @@ footer .index_nombres h1 {
 
 /* FIN RECETA */
 
+/* INICIO SEARCH RESULTS */
+
+.search_titulo {
+    text-align: center;
+    margin-top: 2%;
+}
+
+.search_container {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.search_result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 30%;
+    margin-bottom: 1%;
+
+
+}
+
+.search_result_image {
+    width: 60%;
+    height: 60%;
+    border-radius: 4%;
+}
+
+
+
 /* INICIO LOG IN */
 
 .login_container {
@@ -267,3 +301,7 @@ label[for="register_tyc"] {
     font-size: 70%;
     color: rgba(29, 75, 40, 0.559);
 }
+
+/* FIN REGISTER */
+
+
