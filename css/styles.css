@@ -102,12 +102,14 @@ footer .index_nombres h1 {
     margin-bottom: 1%;
     border: 1px solid rgba(29, 75, 40, 0.559);
     margin: 1% 0.5%;
+    border-radius: 2%;
 }
 
-.index_receta img {
+.index_imagenes {
     margin: 5% 0;
     width: 90%;
     align-items: center;
+    border-radius: 2%;
     
 }
 
@@ -222,7 +224,7 @@ footer .index_nombres h1 {
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 100%;
 }
 
@@ -230,20 +232,30 @@ footer .index_nombres h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid rgba(29, 75, 40, 0.559);
+    border-radius: 2%;
     width: 30%;
     margin-bottom: 1%;
-
-
 }
 
 .search_result_image {
+    margin: 4% 0;
     width: 60%;
-    height: 60%;
-    border-radius: 4%;
+    height: 70%;
+    border-radius: 2%;
 }
 
+.search_result_title {
+    color: rgba(54, 11, 11, 0.347);
+    font-weight: bold;
+    margin-bottom: 2%;
+}
 
+.search_result_link {
+    color: rgba(29, 75, 40, 0.559);
+}
+
+/* FIN SEARCH RESULTS */
 
 /* INICIO LOG IN */
 
@@ -303,5 +315,146 @@ label[for="register_tyc"] {
 }
 
 /* FIN REGISTER */
+
+@media (max-width: 768px) {
+
+    body {
+        max-width: 768px;
+    }
+
+    /* INICIO HEADER */
+
+    #formularioBusqueda button {
+        display: none;
+    }
+
+    #formularioBusqueda ::placeholder{ /*PREGUNTAR A LEAN*/
+        content: "Buscar receta";
+        color: grey;
+        font-size: 14px;
+    }
+
+    .header_links ul {
+        display: flex;
+    }
+
+    /* FIN HEADER */
+
+    /* INICIO INDEX */
+
+    .index_recetas_container {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .index_receta {
+        width: 45%;
+    }
+
+    .index_boton_cargar_container {
+        display: flex;
+        justify-content: center;
+        margin: 2% 0;
+    }
+
+    /* FIN INDEX */
+
+    /* INICIO RECETAS */
+
+    .receta_container {
+        width: 90%;
+    }
+
+    .receta_imagen {
+        width: 90%;
+    }
+
+    .receta_titulo {
+        font-size: 50px;
+    }
+
+    .receta_tiempo {
+        font-size: 30px;
+        margin: 5% 0;
+    }
+
+    h3.receta_titulo  {
+        font-size: 40px;
+    }
+
+    .receta_instrucciones {
+        width: 90%;
+    }
+
+    .receta_lista {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin: 3% 0;
+    }
+
+    .receta_lista li {
+        margin: 0 5%;
+    }
+
+    .receta_footer {
+        margin-top: 2%;
+    }
+
+    /* FIN RECETAS */
+
+    /*INICIO SEARCH RESULTS */
+
+    .search_result {
+        width: 45%;
+        margin: 2% 0;
+    }
+
+    .search_result_image {
+        width: 90%;
+    }
+
+    .search_result_title {
+        align-items: center;
+    }
+
+    .search_result_link {
+        margin: 2% 0;
+    }
+
+    /* FIN SEARCH RESULTS */
+
+    /* INICIO LOG IN */
+
+    .login_container {
+        width: 80%;
+        padding-bottom: 30%;
+    }
+
+    .login_formulario {
+        display: flex;
+        align-items: center;
+    }
+
+    .login_titulo {
+        font-size: 80px;
+        margin: 10% 0;
+    }
+
+    .login_input {
+        height: 50px;
+        width: 80%;
+    }
+
+    .login_boton {
+        margin-top: 5%;
+        height: 50px;
+        width: 80%;
+    }
+
+    .login_enlace {
+        font-size: 30px;
+    }
+}
 
 
