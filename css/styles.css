@@ -316,6 +316,8 @@ label[for="register_tyc"] {
 
 /* FIN REGISTER */
 
+/* INICIO RESPONSIVE */
+
 @media (max-width: 768px) {
 
     body {
@@ -458,3 +460,4 @@ label[for="register_tyc"] {
 }
 
 
+/* FIN RESPONSIVE */
