@@ -471,20 +471,15 @@ label[for="register_tyc"] {
     width: 15%;
     align-items: center;
     border-radius:5%;
-    background-color: 
+    background-color: rgba(88, 124, 97, 0.317);
 }
 
 .categories_titulo{
     align-items: center;
     text-align: center;
+    list-style: none;
+    text-decoration: none;
+    color: black;
 }
 
-.categories-button{
-    margin-top: 10%;
-    padding: 5%;
-    background-color: rgba(29, 75, 40, 0.559);
-    margin-left: 20%;
-    text-align: center;
-    border: 2%, solid, black;
 
-}
