@@ -457,4 +457,34 @@ label[for="register_tyc"] {
     }
 }
 
+    /*INICIO CATEGORIES */
+.categoriesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
+.categories_item{
+    padding: 2%;
+    margin: 2%;
+    border: 2px, solid, rgba(29, 75, 40, 0.559);
+    width: 15%;
+    align-items: center;
+    border-radius:5%;
+    background-color: 
+}
+
+.categories_titulo{
+    align-items: center;
+    text-align: center;
+}
+
+.categories-button{
+    margin-top: 10%;
+    padding: 5%;
+    background-color: rgba(29, 75, 40, 0.559);
+    margin-left: 20%;
+    text-align: center;
+    border: 2%, solid, black;
+
+}

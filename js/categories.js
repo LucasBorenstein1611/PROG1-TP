@@ -34,9 +34,9 @@ function cargarCategorias() {
                 let categoriesHTML = '';
                 for (let i = 0; i < categoriasUnicas.length; i++) {
                     categoriesHTML += `
-                        <article class="category-item">
-                            <h2>${categoriasUnicas[i]}</h2>
-                            <button class="category-button" onclick="mostrarRecetas('${categoriasUnicas[i]}')">Ver Recetas</button>
+                        <article class="categories_item">
+                            <h2 class="categories_titulo">${categoriasUnicas[i]}</h2>
+                            <button class="categories-button" onclick="mostrarRecetas('${categoriasUnicas[i]}')">Ver Recetas</button>
                         </article>
                     `;
                 }
