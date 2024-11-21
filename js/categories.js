@@ -1,11 +1,10 @@
-
 const categoriesContainer = document.getElementById("categoriesContainer");
 
 function cargarCategorias() {
     fetch("https://dummyjson.com/recipes")
         .then(response => response.json())
         .then(data => {
-            console.log(data); 
+            console.log(data);
 
             if (data.recipes && data.recipes.length > 0) {
                 let categoriasUnicas = [];
@@ -17,6 +16,7 @@ function cargarCategorias() {
                         for (let j = 0; j < receta.tags.length; j++) {
                             const tag = receta.tags[j];
                             
+                            // Verificar si el tag ya existe
                             let yaExiste = false;
                             for (let k = 0; k < categoriasUnicas.length; k++) {
                                 if (categoriasUnicas[k] === tag) {
@@ -24,7 +24,7 @@ function cargarCategorias() {
                                 }
                             }
 
-                            if (yaExiste === false) {
+                            if (!yaExiste) {
                                 categoriasUnicas.push(tag);
                             }
                         }
@@ -35,7 +35,9 @@ function cargarCategorias() {
                 for (let i = 0; i < categoriasUnicas.length; i++) {
                     categoriesHTML += `
                         <article class="categories_item">
-                        <a class="categories_titulo" href="category.html">${categoriasUnicas[i]}</a>
+                            <a class="categories_titulo" href="category.html?category=${categoriasUnicas[i]}">
+                                ${categoriasUnicas[i]}
+                            </a>
                         </article>
                     `;
                 }
@@ -44,7 +46,7 @@ function cargarCategorias() {
                     categoriesContainer.innerHTML = categoriesHTML;
                 } else {
                     categoriesContainer.innerHTML = '<p>No hay categorías disponibles.</p>';
-}
+                }
             } else {
                 categoriesContainer.innerHTML = `<p>No se encontraron recetas.</p>`;
             }
@@ -56,6 +58,3 @@ function cargarCategorias() {
 }
 
 document.addEventListener("DOMContentLoaded", cargarCategorias);
-function mostrarRecetas(tag) {
-    console.log(`Mostrar recetas del tag: ${tag}`);
-}
