@@ -164,10 +164,10 @@ footer .index_nombres h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%; /* Ocupará el 60% del ancho de la pantalla */
-    margin-left: auto; /* Centra horizontalmente el contenedor */
-    margin-right: auto; /* Centra horizontalmente el contenedor */
-    padding: 20px; /* Opcional: agrega espacio interior */
+    width: 60%; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding: 20px; 
     border: 1px solid rgba(29, 75, 40, 0.559); 
     border-radius: 1%;
     
@@ -256,22 +256,53 @@ footer .index_nombres h1 {
      /*FIN CATEGORIES */
     
     /*INICIO CATEGORY */
-    .recipesContainer{
+
+    #recipesContainer {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
     }
-    .titulo_category{
-        color: brown;
-        text-align: center;
-        width: 30%;
-        margin-left: 30%;
-        padding: 2%;
+
+    .articleRecetas{
+        display: flex;
+        flex-direction: column; 
+        justify-content: space-between;
+        align-items: center; 
+        width: 25%; 
+        padding: 1%;
+        margin: 3%;
+        border: 1px solid rgba(29, 75, 40, 0.559); 
+        border-radius: 3%;
+ }
+    .img_recetas{
+        width: 70%; 
+        height: auto; 
+        border-radius: 10%; 
+        padding: 3%;
+    }
+
+    .info_recetas{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+    }
+
+    .nombreReceta{
+        font-size: larger;
+        font-weight: bold;
+        color: rgba(54, 11, 11, 0.347);
     }
     
-    .descripcion_category{
-        width: 30%;
-        text-align: center;
-        font-size: large;
+    .dificultadReceta{
+        color: rgba(29, 75, 40, 0.559);
+    }
+
+    .detalleLink{
+        list-style: none;
+        color: rgba(29, 75, 40, 0.559);
+        font-weight: bold;
+        
     }
 
 /* INICIO SEARCH RESULTS */
@@ -377,6 +408,8 @@ label[for="register_tyc"] {
 }
 
 /* FIN REGISTER */
+
+
 
 /* INICIO RESPONSIVE */
 
@@ -536,3 +569,6 @@ label[for="register_tyc"]  {
 .register_tyc {
     margin-top: 15%;
 }
+/* FIN REGISTER*/
+
+

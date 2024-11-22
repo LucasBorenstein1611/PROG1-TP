@@ -19,8 +19,10 @@ if (searchTerm) {
                     resultsHTML += `
                         <article class="search_result">
                             <img src="${recipe.image}" alt="${recipe.name}" class="search_result_image">
-                            <h2 class="search_result_title">${recipe.name}</h2>
-                            <a href="receta.html?id=${recipe.id}" class="search_result_link">Ver detalle</a>
+                            <section class= "info_receta">
+                                <h2 class="search_result_title">${recipe.name}</h2>
+                                <a href="receta.html?id=${recipe.id}" class="search_result_link">Ver detalle</a>
+                            <section/>
                         </article>
                     `;
                 }
