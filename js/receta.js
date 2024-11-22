@@ -18,7 +18,6 @@ if (recetaId) {
                         <p class="receta_instrucciones">${data.instructions}</p>
                 `;
 
-                // Verificar si hay categorías y agregarlas
                 if (data.tags && data.tags.length > 0) {
                     let categoriasHTML = "";
                     for (let i = 0; i < data.tags.length; i++) {

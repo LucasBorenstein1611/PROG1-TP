@@ -33,9 +33,11 @@ if (!IDReceta) {
                                 recetasHTML += `
                                     <article class="articleRecetas">
                                         <img src="${receta.image}" alt="${receta.name}" class="img_recetas">
-                                        <p class="nombreReceta">${receta.name}</p>
-                                        <p class="dificultadReceta">Dificultad: ${receta.difficulty}</p>
-                                        <a href="detalleReceta.html?id=${receta.id}" class="detalleLink">Ir a detalle</a>
+                                        <section class="info_recetas">
+                                            <p class="nombreReceta">${receta.name}</p>
+                                            <p class="dificultadReceta">Dificultad: ${receta.difficulty}</p>
+                                            <a href="receta.html?id=${receta.id}" class="detalleLink">Ir a detalle</a>
+                                        </section>
                                     </article>
                                 `;
                             }
