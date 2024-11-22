@@ -1,58 +1,57 @@
-const url = window.location.search;
-const categoriaSeleccionada = url.split("=")[1];
+let qs = location.search;
+let qsObj = new URLSearchParams(qs);
+let IDReceta = qsObj.get("category");
 
-const categoryTitle = document.querySelector("#categoryTitle");
-const recipesContainer = document.querySelector("#recipesContainer");
+let categoria = document.querySelector("#categoryTitle");
+let recetasDeCategoria = document.querySelector("#recipesContainer");
 
-if (categoriaSeleccionada) {
-    categoryTitle.textContent = "Categoría: " + categoriaSeleccionada;
-    cargarRecetas(categoriaSeleccionada);
+if (!IDReceta) {
+    categoria.innerText = "Categoría no encontrada";
+    recetasDeCategoria.innerHTML = "<p>No se especificó una categoría válida.</p>";
 } else {
-    categoryTitle.textContent = "Categoría no encontrada.";
-    recipesContainer.innerHTML = "<p>Por favor, selecciona una categoría válida.</p>";
-}
+    categoria.innerHTML = `Categoría: <span style="color: rgba(29, 75, 40, 0.559);">${IDReceta}</span>`;
 
-function cargarRecetas(categoria) {
-    fetch("https://dummyjson.com/recipes")
+
+    let url = "https://dummyjson.com/recipes";
+
+    recetasDeCategoria.innerHTML = "<p>Cargando recetas...</p>";
+
+    fetch(url)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            let recetasHTML = "";
+            let recetasHTML = ""; 
 
-            for (let i = 0; i < data.recipes.length; i++) {
-                let receta = data.recipes[i];
+            if (data.recipes && data.recipes.length > 0) {
+                for (let i = 0; i < data.recipes.length; i++) {
+                    let receta = data.recipes[i];
 
-                // Verificar si la receta tiene etiquetas
-                if (receta.tags) {
-                    for (let j = 0; j < receta.tags.length; j++) {
-                        // Comparar la categoría seleccionada con las etiquetas
-                        if (receta.tags[j] === categoria) {
-                            const title = receta.name || "Sin título";
-                            const description = receta.instructions
-                                ? receta.instructions.join(". ") // Unir instrucciones como descripción
-                                : "Sin descripción";
-
-                            recetasHTML += `
-                                <article>
-                                    <h2 class="titulo_category">${title}</h2>
-                                    <p class="descripcion_category">${description}</p>
-                                    <img src="${receta.image}" alt="${title}" class="img_recetas">
-                                </article>
-                            `;
+                    if (receta.tags) {
+                        for (let j = 0; j < receta.tags.length; j++) {
+                            if (receta.tags[j] === IDReceta) {
+                                recetasHTML += `
+                                    <article class="articleRecetas">
+                                        <img src="${receta.image}" alt="${receta.name}" class="img_recetas">
+                                        <p class="nombreReceta">${receta.name}</p>
+                                        <p class="dificultadReceta">Dificultad: ${receta.difficulty}</p>
+                                        <a href="detalleReceta.html?id=${receta.id}" class="detalleLink">Ir a detalle</a>
+                                    </article>
+                                `;
+                            }
                         }
                     }
                 }
             }
 
             if (recetasHTML === "") {
-                recipesContainer.innerHTML = "<p>No hay recetas para esta categoría.</p>";
+                recetasDeCategoria.innerHTML = "<p>No hay recetas para esta categoría.</p>";
             } else {
-                recipesContainer.innerHTML = recetasHTML;
+                recetasDeCategoria.innerHTML = recetasHTML;
             }
         })
-        .catch(function () {
-            recipesContainer.innerHTML = "<p>Error al cargar las recetas. Intenta nuevamente.</p>";
+        .catch(function (error) {
+            console.log("El error es: " + error);
+            recetasDeCategoria.innerHTML = "<p>Error al cargar las recetas. Intenta nuevamente.</p>";
         });
 }
-
