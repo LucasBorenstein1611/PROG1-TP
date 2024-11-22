@@ -38,6 +38,7 @@ if (searchTerm) {
                 resultsContainer.style.color = "red"
                 resultsContainer.style.textAlign = "center"
                 resultsContainer.style.marginTop = "2%"
+                resultsContainer.style.marginBottom = "19%"
                 
             }
         })

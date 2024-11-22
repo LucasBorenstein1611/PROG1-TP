@@ -15,9 +15,10 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
     background-color: beige;
 }
+
+
 
 /* INICIO HEADER */
 header {
@@ -48,7 +49,19 @@ header .header_links ul a {
 } 
 
 header .header_form {
-    margin-right: 30px;
+    width: 20%;
+}
+
+.header_form input {
+    border-radius: 10%;
+    border: 1px solid rgba(29, 75, 40, 0.559)
+}
+
+.header_form button {
+    background-color: rgba(54, 11, 11, 0.249);
+    border-radius: 10%;
+    border: 1px solid rgba(29, 75, 40, 0.559);
+    width: 30%;
 }
 
 /* FIN HEADER */
@@ -56,7 +69,7 @@ header .header_form {
 /* INICIO FOOTER */
 footer {
     width: 100%;
-    height: 300px;
+    height: 150px;
     background-color:rgba(29, 75, 40, 0.559);
     border: 2px solid rgba(54, 11, 11, 0.347);
     display: flex;
@@ -113,6 +126,7 @@ footer .index_nombres h1 {
 
 .index_receta .index_titulo {
     font-weight: bold;
+    text-align: center;
     color: rgba(54, 11, 11, 0.347);
     margin-bottom: 2%
 }
@@ -156,6 +170,7 @@ footer .index_nombres h1 {
     padding: 20px; /* Opcional: agrega espacio interior */
     border: 1px solid rgba(29, 75, 40, 0.559); 
     border-radius: 1%;
+    
 }
 
 .receta_detalle {
@@ -211,6 +226,54 @@ footer .index_nombres h1 {
 
 /* FIN RECETA */
 
+/*INICIO CATEGORIES */
+
+    .categoriesContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    
+    .categories_item{
+        display: flex;
+        padding: 3%;
+        margin: 2%;
+        border: 2px, solid, rgba(54, 11, 11, 0.347);
+        width: 15%;
+        border-radius:5%;
+        background-color: rgba(57, 40, 40, 0.145);
+    }
+    
+    .categories_titulo{
+        text-align: center;
+        width: 100%;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: larger;
+        color: rgba(54, 11, 11, 0.561);;
+    }
+    
+     /*FIN CATEGORIES */
+    
+    /*INICIO CATEGORY */
+    .recipesContainer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .titulo_category{
+        color: brown;
+        text-align: center;
+        width: 30%;
+        margin-left: 30%;
+        padding: 2%;
+    }
+    
+    .descripcion_category{
+        width: 30%;
+        text-align: center;
+        font-size: large;
+    }
+
 /* INICIO SEARCH RESULTS */
 
 .search_titulo {
@@ -263,6 +326,7 @@ footer .index_nombres h1 {
     flex-direction: column;
     align-items: center;
     width: 30%; /* Ocupará el 60% del ancho de la pantalla */
+    height: 50vh;
     margin-left: auto; /* Centra horizontalmente el contenedor */
     margin-right: auto; /* Centra horizontalmente el contenedor */
     padding: 20px 0;
@@ -339,6 +403,10 @@ label[for="register_tyc"] {
     }
 
     /* FIN HEADER */
+
+    footer {
+        margin-bottom: auto;
+    }
 
     /* INICIO INDEX */
 
@@ -428,7 +496,7 @@ label[for="register_tyc"] {
 
     .login_container {
         width: 80%;
-        padding-bottom: 30%;
+        height: 20%;
     }
 
     .login_formulario {
@@ -457,49 +525,14 @@ label[for="register_tyc"] {
     }
 }
 
-    /*INICIO CATEGORIES */
-.categoriesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+/* FIN LOG IN */
+
+/* INICIO REGISTER */
+
+label[for="register_tyc"]  {
+    font-size: medium;
 }
 
-.categories_item{
-    display: flex;
-    padding: 3%;
-    margin: 2%;
-    border: 2px, solid, rgba(54, 11, 11, 0.347);
-    width: 15%;
-    border-radius:5%;
-    background-color: rgba(57, 40, 40, 0.145);
-}
-
-.categories_titulo{
-    text-align: center;
-    width: 100%;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: larger;
-    color: rgba(54, 11, 11, 0.561);;
-}
-
- /*FIN CATEGORIES */
-
-/*INICIO CATEGORY */
-.recipesContainer{
-    display: flex;
-    flex-wrap: wrap;
-}
-.titulo_category{
-    color: brown;
-    text-align: center;
-    width: 30%;
-    margin-left: 30%;
-    padding: 2%;
-}
-
-.descripcion_category{
-    width: 30%;
-    text-align: center;
-    font-size: large;
+.register_tyc {
+    margin-top: 15%;
 }
