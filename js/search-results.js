@@ -19,7 +19,7 @@ if (searchTerm) {
                     resultsHTML += `
                         <article class="search_result">
                             <img src="${recipe.image}" alt="${recipe.name}" class="search_result_image">
-                            <section class= "info_receta">
+                            <section class= "search_receta">
                                 <h2 class="search_result_title">${recipe.name}</h2>
                                 <a href="receta.html?id=${recipe.id}" class="search_result_link">Ver detalle</a>
                             <section/>

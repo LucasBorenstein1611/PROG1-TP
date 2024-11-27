@@ -12,13 +12,21 @@
     font-style: normal;
 }
 
+/* Asegurar que el HTML y BODY ocupen toda la pantalla */
+html {
+    height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
     background-color: beige;
+    height: 100%;
 }
 
-
+main {
+    flex: 1; /* Asegura que el main ocupe el espacio restante */
+}
 
 /* INICIO HEADER */
 header {
@@ -26,10 +34,9 @@ header {
     background-color: rgba(29, 75, 40, 0.559);
     display: flex;
     border: 2px solid rgba(54, 11, 11, 0.347);
-    height: 80px;
+    padding: 1%;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 header .header_img {
@@ -63,19 +70,18 @@ header .header_form {
     border: 1px solid rgba(29, 75, 40, 0.559);
     width: 30%;
 }
-
 /* FIN HEADER */
 
 /* INICIO FOOTER */
 footer {
     width: 100%;
-    height: 150px;
-    background-color:rgba(29, 75, 40, 0.559);
+    padding: 2%;
+    background-color: rgba(29, 75, 40, 0.559);
     border: 2px solid rgba(54, 11, 11, 0.347);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto;
+    margin-top: auto; /* Empuja el footer hacia el fondo */
 }
 
 footer .index_nombres {
@@ -88,11 +94,9 @@ footer .index_nombres h1 {
     margin: 10px 20px; 
     background-color: none;
 }
-
 /* FIN FOOTER */
 
 /* INICIO INDEX */
-
 .index_titular {
     text-align: center;
     margin-top: 1%;
@@ -121,14 +125,13 @@ footer .index_nombres h1 {
     width: 90%;
     align-items: center;
     border-radius: 2%;
-    
 }
 
 .index_receta .index_titulo {
     font-weight: bold;
     text-align: center;
     color: rgba(54, 11, 11, 0.347);
-    margin-bottom: 2%
+    margin-bottom: 2%;
 }
 
 .index_receta .index_dificultad {
@@ -156,9 +159,9 @@ footer .index_nombres h1 {
     border: 1px solid rgba(29, 75, 40, 0.559);
     border-radius: 10px;
 }
+/* FIN INDEX */
 
 /* INICIO RECETAS */
-
 .receta_container {
     margin: 1% 0;
     display: flex;
@@ -170,7 +173,6 @@ footer .index_nombres h1 {
     padding: 20px; 
     border: 1px solid rgba(29, 75, 40, 0.559); 
     border-radius: 1%;
-    
 }
 
 .receta_detalle {
@@ -190,8 +192,7 @@ footer .index_nombres h1 {
     font-weight: bold;
     color: rgba(54, 11, 11, 0.347);
     font-size: 200%;
-    margin-bottom: 2%
-
+    margin-bottom: 2%;
 }
 
 .receta_tiempo {
@@ -203,8 +204,7 @@ footer .index_nombres h1 {
 .receta_instrucciones {
     width: 65%;
     margin-bottom: 2%;
-    color: rgba(29, 75, 40, 0.559)
-
+    color: rgba(29, 75, 40, 0.559);
 }
 
 .receta_titulo_categorias {
@@ -223,87 +223,84 @@ footer .index_nombres h1 {
     margin-bottom: 2%;
     font-weight: bolder;
 }
-
 /* FIN RECETA */
 
-/*INICIO CATEGORIES */
+/* INICIO CATEGORIES */
+.categoriesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-    .categoriesContainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    
-    .categories_item{
-        display: flex;
-        padding: 3%;
-        margin: 2%;
-        border: 2px, solid, rgba(54, 11, 11, 0.347);
-        width: 15%;
-        border-radius:5%;
-        background-color: rgba(57, 40, 40, 0.145);
-    }
-    
-    .categories_titulo{
-        text-align: center;
-        width: 100%;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: larger;
-        color: rgba(54, 11, 11, 0.561);;
-    }
-    
-     /*FIN CATEGORIES */
-    
-    /*INICIO CATEGORY */
+.categories_item {
+    display: flex;
+    padding: 3%;
+    margin: 2%;
+    border: 2px solid rgba(54, 11, 11, 0.347);
+    width: 15%;
+    border-radius: 5%;
+    background-color: rgba(57, 40, 40, 0.145);
+}
 
-    #recipesContainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center; 
-    }
+.categories_titulo {
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: larger;
+    color: rgba(54, 11, 11, 0.561);
+}
+/* FIN CATEGORIES */
 
-    .articleRecetas{
-        display: flex;
-        flex-direction: column; 
-        justify-content: space-between;
-        align-items: center; 
-        width: 25%; 
-        padding: 1%;
-        margin: 3%;
-        border: 1px solid rgba(29, 75, 40, 0.559); 
-        border-radius: 3%;
- }
-    .img_recetas{
-        width: 70%; 
-        height: auto; 
-        border-radius: 10%; 
-        padding: 3%;
-    }
+/* INICIO CATEGORY */
+#recipesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+}
 
-    .info_recetas{
-        display: flex;
-        flex-direction: column; 
-        justify-content: center; 
-    }
+.articleRecetas {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center; 
+    width: 25%; 
+    padding: 1%;
+    margin: 3%;
+    border: 1px solid rgba(29, 75, 40, 0.559); 
+    border-radius: 3%;
+}
 
-    .nombreReceta{
-        font-size: larger;
-        font-weight: bold;
-        color: rgba(54, 11, 11, 0.347);
-    }
-    
-    .dificultadReceta{
-        color: rgba(29, 75, 40, 0.559);
-    }
+.img_recetas {
+    width: 70%; 
+    height: auto; 
+    border-radius: 10%; 
+    padding: 3%;
+}
 
-    .detalleLink{
-        list-style: none;
-        color: rgba(29, 75, 40, 0.559);
-        font-weight: bold;
-        
-    }
+.info_recetas {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+}
+
+.nombreReceta {
+    font-size: larger;
+    font-weight: bold;
+    color: rgba(54, 11, 11, 0.347);
+}
+
+.dificultadReceta {
+    color: rgba(29, 75, 40, 0.559);
+}
+
+.detalleLink {
+    list-style: none;
+    color: rgba(29, 75, 40, 0.559);
+    font-weight: bold;
+}
+/* FIN CATEGORY */
 
 /* INICIO SEARCH RESULTS */
 
@@ -318,6 +315,10 @@ footer .index_nombres h1 {
     flex-wrap: wrap;
     margin-top: 2%;
     width: 100%;
+}
+
+.search_receta {
+    text-align: center;
 }
 
 .search_result {
@@ -352,7 +353,7 @@ footer .index_nombres h1 {
 /* INICIO LOG IN */
 
 .login_container {
-    margin: 1% 0;
+    margin: 1% auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -360,6 +361,7 @@ footer .index_nombres h1 {
     height: 50vh;
     margin-left: auto; 
     margin-right: auto; 
+    height: 50%;
     padding: 20px 0;
     border: 1px solid rgba(29, 75, 40, 0.559); 
     border-radius: 1%;
@@ -431,15 +433,15 @@ label[for="register_tyc"] {
         font-size: 14px;
     }
 
+    header {
+        width: 100%;
+    }
+
     .header_links ul {
         display: flex;
     }
 
     /* FIN HEADER */
-
-    footer {
-        margin-bottom: auto;
-    }
 
     /* INICIO INDEX */
 
@@ -464,6 +466,7 @@ label[for="register_tyc"] {
 
     .receta_container {
         width: 90%;
+        text-align: center;
     }
 
     .receta_imagen {
@@ -517,10 +520,7 @@ label[for="register_tyc"] {
 
     .search_result_title {
         align-items: center;
-    }
-
-    .search_result_link {
-        margin: 2% 0;
+        margin-bottom: 5%;
     }
 
     /* FIN SEARCH RESULTS */
@@ -529,7 +529,7 @@ label[for="register_tyc"] {
 
     .login_container {
         width: 80%;
-        height: 20%;
+        height: 80%;
     }
 
     .login_formulario {
@@ -570,5 +570,4 @@ label[for="register_tyc"]  {
     margin-top: 15%;
 }
 /* FIN REGISTER*/
-
 
