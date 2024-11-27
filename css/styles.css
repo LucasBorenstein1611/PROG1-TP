@@ -556,7 +556,6 @@ label[for="register_tyc"] {
     .login_enlace {
         font-size: 30px;
     }
-}
 
 /* FIN LOG IN */
 
@@ -571,3 +570,43 @@ label[for="register_tyc"]  {
 }
 /* FIN REGISTER*/
 
+/* INICIO CATEGORIES */
+.categoriesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.categories_item {
+    width: 40%;
+}
+/* FIN CATEGORIES */
+/* INICIO CATEGORY */
+#recipesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+}
+
+.articleRecetas {
+    width: 100%; 
+}
+
+.img_recetas {
+    width: 80%; 
+}
+
+.nombreReceta {
+    font-size: x-large;
+    font-weight: bold;
+    color: rgba(54, 11, 11, 0.347);
+}
+
+.dificultadReceta {
+    color: rgba(29, 75, 40, 0.559);
+    font-size: larger;
+}
+/* FIN CATEGORY */
+
+}
