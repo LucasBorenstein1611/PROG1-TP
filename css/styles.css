@@ -356,10 +356,10 @@ footer .index_nombres h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%; /* Ocupará el 60% del ancho de la pantalla */
+    width: 30%; 
     height: 50vh;
-    margin-left: auto; /* Centra horizontalmente el contenedor */
-    margin-right: auto; /* Centra horizontalmente el contenedor */
+    margin-left: auto; 
+    margin-right: auto; 
     padding: 20px 0;
     border: 1px solid rgba(29, 75, 40, 0.559); 
     border-radius: 1%;
