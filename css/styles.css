@@ -583,9 +583,6 @@ label[for="register_tyc"]  {
 /* FIN CATEGORIES */
 /* INICIO CATEGORY */
 #recipesContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center; 
 }
 
