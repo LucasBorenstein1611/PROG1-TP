@@ -11,17 +11,17 @@ formularioBusqueda.addEventListener("submit", function (event) {
     // Validar campo de búsqueda
     if (entradaBusqueda.value === "") {
         entradaBusqueda.placeholder = "El campo está vacío";
-        entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
+        entradaBusqueda.style.borderColor = "red"; 
         
         errors = true;
     } else if (entradaBusqueda.value.length < 3) {
-        entradaBusqueda.value = ""; // Limpia el campo para volver a intentar
+        entradaBusqueda.value = ""; 
         entradaBusqueda.placeholder = "Mínimo 3 caracteres";
-        entradaBusqueda.style.borderColor = "red"; // Cambiar el borde del campo
+        entradaBusqueda.style.borderColor = "red"; 
         
         errors = true;
     } else {
-        entradaBusqueda.style.borderColor = ""; // Restaurar el color del borde
+        entradaBusqueda.style.borderColor = ""; 
     }
 
     // Si no hay errores, enviar el formulario
@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function() {
             });
     }
 
-    // Asignar el evento al botón de cargar más
+    
     botonCargar.addEventListener("click", cargarRecetas);
 
-    // Cargar recetas al cargar la página
+    
     cargarRecetas();
 });

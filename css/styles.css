@@ -25,7 +25,7 @@ body {
 }
 
 main {
-    flex: 1; /* Asegura que el main ocupe el espacio restante */
+    flex: 1;
 }
 
 /* INICIO HEADER */
@@ -61,7 +61,7 @@ header .header_form {
 
 .header_form input {
     border-radius: 10%;
-    border: 1px solid rgba(29, 75, 40, 0.559)
+    border: 1px solid rgba(29, 75, 40, 0.559);
 }
 
 .header_form button {
@@ -81,7 +81,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: auto; /* Empuja el footer hacia el fondo */
+    margin-top: auto; 
 }
 
 footer .index_nombres {
@@ -149,7 +149,7 @@ footer .index_nombres h1 {
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    padding: 1% 2.5%; /* Opcional: ajusta los márgenes alrededor del botón */
+    padding: 1% 2.5%; 
 }
 
 .index_boton_cargar {
@@ -167,7 +167,7 @@ footer .index_nombres h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%; 
+    width: 50%; 
     margin-left: auto; 
     margin-right: auto; 
     padding: 20px; 
@@ -265,6 +265,7 @@ footer .index_nombres h1 {
     flex-direction: column; 
     justify-content: space-between;
     align-items: center; 
+    text-align: center;
     width: 25%; 
     padding: 1%;
     margin: 3%;
@@ -293,6 +294,7 @@ footer .index_nombres h1 {
 
 .dificultadReceta {
     color: rgba(29, 75, 40, 0.559);
+    margin: 2% 0;
 }
 
 .detalleLink {
@@ -329,6 +331,7 @@ footer .index_nombres h1 {
     border-radius: 2%;
     width: 30%;
     margin-bottom: 1%;
+    padding-bottom: 1%;
 }
 
 .search_result_image {
@@ -344,8 +347,15 @@ footer .index_nombres h1 {
     margin-bottom: 2%;
 }
 
+.search_dificultad {
+    color: rgba(29, 75, 40, 0.559);
+    margin: 2%;
+}
+
 .search_result_link {
     color: rgba(29, 75, 40, 0.559);
+    font-weight: bolder;
+    
 }
 
 /* FIN SEARCH RESULTS */
@@ -581,6 +591,7 @@ label[for="register_tyc"]  {
     width: 40%;
 }
 /* FIN CATEGORIES */
+
 /* INICIO CATEGORY */
 #recipesContainer {
     align-items: center; 

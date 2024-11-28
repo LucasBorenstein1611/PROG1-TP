@@ -22,8 +22,8 @@ if (recetaId) {
                     let categoriasHTML = "";
                     for (let i = 0; i < data.tags.length; i++) {
                         categoriasHTML += `
-                            <li><a href="categories.html?categoria=${data.tags[i]}" class="receta_categorias">${data.tags[i]}</a></li>
-                        `;  
+                            <li><a href="category.html?category=${data.tags[i]}" class="receta_categorias">${data.tags[i]}</a></li>
+                        `;
                     }
 
                     recetaHTML += `
