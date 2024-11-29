@@ -1,14 +1,14 @@
-// Seleccionar el formulario y el campo de entrada
+
 let formularioBusqueda = document.querySelector("#formularioBusqueda");
 let entradaBusqueda = document.querySelector("#entradaBusqueda");
 
-// Agregar evento al formulario
+
 formularioBusqueda.addEventListener("submit", function (event) { 
-    event.preventDefault(); // Detener el envío por defecto
+    event.preventDefault(); 
 
     let errors = false;
 
-    // Validar campo de búsqueda
+    
     if (entradaBusqueda.value === "") {
         entradaBusqueda.placeholder = "El campo está vacío";
         entradaBusqueda.style.borderColor = "red"; 
@@ -24,7 +24,7 @@ formularioBusqueda.addEventListener("submit", function (event) {
         entradaBusqueda.style.borderColor = ""; 
     }
 
-    // Si no hay errores, enviar el formulario
+    
     if (!errors) {
         formularioBusqueda.submit();
     }

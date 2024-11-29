@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* ESTILOS GENERALES */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -12,7 +12,6 @@
     font-style: normal;
 }
 
-/* Asegurar que el HTML y BODY ocupen toda la pantalla */
 html {
     height: 100%;
 }
@@ -437,7 +436,7 @@ label[for="register_tyc"] {
         display: none;
     }
 
-    #formularioBusqueda ::placeholder{ /*PREGUNTAR A LEAN*/
+    #formularioBusqueda ::placeholder{ 
         content: "Buscar receta";
         color: grey;
         font-size: 14px;
